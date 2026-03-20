@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kalkulator inflacije</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="kalkulacije.css">
+	<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+</head>
+<body>
+	<div class="background-overlay">
+
+	<h1>Kalkulator slozenih  </b>kamata</h1>
+
+	<div class="container">
+	<h3>Kamatna stopa: <input type="number" min="0.1" id="inflationRate"> %</h3> <br>
+	
+	<h3>Izračunaj novac/dodaj sumu <input type="number" min="1" id="money"></h3> <br/> <br/>
+				
+	<h4>Koliko će narasti za par godina <input type="number" min="1" id="years">
+       </h4><br/><br/>
+    
+<div class="dugmad">
+    
+	<button onclick="inflationCalculator()">Izračunaj</button>
+	
+	<button id="osvjezi">Resetuj</button>
+	</div>   
+	
+		</div>
+	</div>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker registrovan!', reg))
+      .catch(err => console.error('Greška:', err));
+  }
+</script>
+	<script src="kalkulacije.js"></script>
+</body>
+</html>
