@@ -1,7 +1,7 @@
 {
   "name": "Kalkulator Inflacije",
   "short_name": "Kalkulator",
-  "start_url": "Index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
