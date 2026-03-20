@@ -3,7 +3,7 @@ const CACHE_NAME = 'kalkulator-cache-v1';
 // telefon će znati da skine novi kôd sa interneta.
 
 const urlsToCache = [
-  'Index.html',
+  'index.html',
   'kalkulacije.css', // Provjeri malo/veliko slovo!
   'kalkulacije.js',
   'percentage.png'
