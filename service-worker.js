@@ -1,32 +1,39 @@
-const CACHE_NAME = 'kalkulator-cache-v1';
-// OVO JE NAJBOLJI DIO: Kada promeniš ovu verziju (v1 u v2), 
-// telefon će znati da skine novi kôd sa interneta.
-
+const CACHE_NAME = 'kalkulator-v1.2'; // Ovdje mijenjaš verziju
 const urlsToCache = [
   'index.html',
-  'kalkulacije.css', // Provjeri malo/veliko slovo!
+  'kalkulacije.css',
   'kalkulacije.js',
-  'percentage.png'
-  // Dodaj ovde putanje do SVIH slika, JS fajlova ili fontova koje koristiš
+  'percentage.png',
+  'manifest.json'
 ];
 
+// 1. INSTALACIJA (Punjenje ruksaka)
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-    .then(cache => cache.addAll(urlsToCache))
+      .then(cache => cache.addAll(urlsToCache))
   );
 });
 
+// 2. AKTIVACIJA (OVO DODAJES - Čišćenje starog smeća)
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
+});
+
+// 3. FETCH (Rad bez interneta)
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-    .then(response => {
-      // Ako fajl postoji u memoriji, vrati ga (offline)
-      if (response) {
-        return response;
-      }
-      // Ako ne postoji, skini ga sa interneta
-      return fetch(event.request);
-    })
+      .then(response => response || fetch(event.request))
   );
 });
