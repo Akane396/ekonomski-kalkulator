@@ -21,7 +21,16 @@ function inflationCalculator() {
     document.querySelector('.container').appendChild(newElement);
 }
 
-document.getElementById('osvjezi').addEventListener('click',  ()  => {
-    
-    location.reload()
-})
+document.getElementById('osvjezi').addEventListener('click', () => {
+    // 1. Čistimo tvoja polja koristeći TAČNE ID-ove sa slike
+    document.getElementById('inflationRate').value = '';
+    document.getElementById('money').value = '';
+    document.getElementById('years').value = '';
+
+    // 2. Brišemo onaj tekst rezultata koji si napravio sa document.createElement('div')
+    // Pošto si koristio appendChild, moramo ukloniti te divove sa klasom 'new-value'
+    const stariRezultati = document.querySelectorAll('.new-value');
+    stariRezultati.forEach(element => element.remove());
+
+    console.log("Sada radi! Očišćeno lokalno bez reload-a.");
+});
