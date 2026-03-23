@@ -1,39 +1,37 @@
-const CACHE_NAME = 'kalkulator-v1.6'; // Ovdje mijenjaš verziju
+const CACHE_NAME = 'anime-app-v2.5'; // Uvijek promijeni ovaj broj kad nešto mijenjaš!
 const urlsToCache = [
-  'index.html',
-  'kalkulacije.css',
-  'kalkulacije.js',
-  'percentage.png',
-  'manifest.json'
+  '/',
+  '/index.html',
+  '/style.css',
+  '/kalkulacije.js',
+  '/manifest.json'
 ];
 
-// 1. INSTALACIJA (Punjenje ruksaka)
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
+// --- OVO DODAJ OVDJE ---
+self.addEventListener('install', (event) => {
+  self.skipWaiting(); // Forsira novu verziju da se instalira odmah, ne čeka staru
 });
 
-// 2. AKTIVACIJA (OVO DODAJES - Čišćenje starog smeća)
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
+  // Čisti stari keš da ne zauzima prostor
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(cache => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Odmah preuzima kontrolu nad svim otvorenim tabovima/prozorima
   );
 });
+// -----------------------
 
-// 3. FETCH (Rad bez interneta)
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
   );
 });
