@@ -1,10 +1,9 @@
-const CACHE_NAME = 'Kalkulator-app-v4.6'; // Promijeni u v3, v4... kad god nešto mijenjaš na stranici
+const CACHE_NAME = 'Kalkulator-app-v4.8'; // Promijeni u v3, v4... kad god nešto mijenjaš na stranici
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/kalkulacije.js',
-  '/manifest.json'
+  'index.html',
+  'kalkulacije.css',
+  'kalkulacije.js',
+  'manifest.json'
 ];
 
 // 1. INSTALACIJA: Forsira novu verziju da se instalira odmah
@@ -41,7 +40,7 @@ self.addEventListener('fetch', (event) => {
       return response || fetch(event.request);
     }).catch(() => {
       // Ako nema interneta, a fajl nije u kešu, uvijek vraća početnu stranu
-      return caches.match('/index.html');
+      return caches.match('index.html');
     })
   );
 });
