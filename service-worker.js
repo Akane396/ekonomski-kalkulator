@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Kalkulator-app-v4.9.6'; // Promijeni u v3, v4... kad god nešto mijenjaš na stranici
+const CACHE_NAME = 'Kalkulator-app-v4.9.8'; // Promijeni u v3, v4... kad god nešto mijenjaš na stranici
 const urlsToCache = [
   'index.html',
   'kalkulacije.css',
