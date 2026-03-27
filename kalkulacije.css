@@ -75,7 +75,7 @@ input:focus {
 }
 
 .container button:active {
-  background-color: #F536A5;
+  background-color: #FF0000;
   color: white;
   transition: all 0.2s ease
 }
