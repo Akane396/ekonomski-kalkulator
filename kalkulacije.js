@@ -17,7 +17,7 @@ function inflationCalculator() {
 
     let newElement = document.createElement('div');
     newElement.className = 'new-value';
-    newElement.innerText = `Današnjih ${money} vrijedi isto kao ${worth} za ${years} godina.`;
+    newElement.innerText = ` Uloženih ${money} za period od ${worth} narasti je na ${years}`;
     document.querySelector('.container').appendChild(newElement);
 }
 
@@ -26,9 +26,7 @@ document.getElementById('osvjezi').addEventListener('click', () => {
     document.getElementById('inflationRate').value = '';
     document.getElementById('money').value = '';
     document.getElementById('years').value = '';
-
-    // 2. Brišemo onaj tekst rezultata koji si napravio sa document.createElement('div')
-    // Pošto si koristio appendChild, moramo ukloniti te divove sa klasom 'new-value'
+    
     const stariRezultati = document.querySelectorAll('.new-value');
     stariRezultati.forEach(element => element.remove());
 
