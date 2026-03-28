@@ -17,7 +17,7 @@ function inflationCalculator() {
 
     let newElement = document.createElement('div');
     newElement.className = 'new-value';
-    newElement.innerText = ` Uloženih ${money} za period od ${worth} narasti je na ${years}`;
+    newElement.innerText = ` Uloženih ${money} za period od  ${years} narasti je na ${worth}`;
     document.querySelector('.container').appendChild(newElement);
 }
 
