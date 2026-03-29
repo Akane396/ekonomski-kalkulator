@@ -1,9 +1,11 @@
-const CACHE_NAME = 'Kalkulator-app-v4.9.37'; // Promijeni u v3, v4... kad god nešto mijenjaš na stranici
+const CACHE_NAME = 'Kalkulator-app-v4.9.40'; // Promijeni u v3, v4... kad god nešto mijenjaš na stranici
 const urlsToCache = [
   'index.html',
   'kalkulacije.css',
   'kalkulacije.js',
-  'manifest.json'
+  'manifest.json', 
+  'bijela.png', 
+  'crna.png'
 ];
 
 // 1. INSTALACIJA: Forsira novu verziju da se instalira odmah

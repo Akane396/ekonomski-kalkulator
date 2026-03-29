@@ -1,90 +1,80 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 body {
-	font-family: sans-serif;
-	color: white;
+    font-family: sans-serif;
+    color: white;
 }
 
 h1 {
-	text-align: center;
-	margin-bottom: 15px;
-	color: white;
-}
-
-h2 {
-	margin-bottom: 15px;
-	
-}
-
-h3 {
-	margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 20px;
 }
 
 .background-overlay {
-	background-color: black;
-	padding: 50px;
-	width: 100%;
-	height: 100vh;
+    background-color: black;
+    padding: 20px; /* Smanjeno sa 50px da bolje stane na mobitel */
+    width: 100%; /* Promijenjeno sa 110% na 100% da nema horizontalnog skrolanja */
+    height: 100vh;
 }
 
 .container {
-	max-width: 800px;
-	margin-top: 30px;
-	border-radius: 20px;
-	background-color: white;
-	padding: 20px;
-	color: black;
+    max-width: 800px;
+    margin: 30px auto 0 auto; /* Centriranje containera */
+    border-radius: 20px;
+    background-color: white;
+    padding: 25px;
+    color: black;
+}
+
+/* Stilovi za inpute unutar containera */
+.container h3, .container h4 {
+    margin-bottom: 20px;
 }
 
 .container input {
-	max-width: 80px;
-	height: 40px;
-	font-size: 18px;
-	border-radius: 6px;
-	text-align: center;
-	color: black;
-	border: none;
-	border-bottom: 1.20px solid white;
-	background-color: #E1E1E1;
-	
+    max-width: 80px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-align: center;
+    color: black;
+    border: none;
+    background-color: #E1E1E1;
+}
+
+/* NOVO: Poravnanje dugmadi */
+.dugmad {
+    display: flex;
+    justify-content: flex-start; /* Dugmad idu jedno do drugog s lijeva */
+    gap: 10px; /* Razmak između dugmadi */
+    margin-top: 10px;
 }
 
 .container button {
-	padding: 10px;
-	font-size: 16px;
-	font-weight: bold;
-	background-color: #000000;
-	color: white;
-	cursor: pointer;
-	border-radius: 10px;
-  transition: background-color 1.5s ease, color 1.5s ease;
- -webkit-tap-highlight-color: transparent;
-}
-
-button {
-	border: none;
-}
-
-input:focus {
-	outline: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 1.5s ease, color 1.5s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container button:active {
-  background-color: #FF0000;
-  color: white;
-  transition: background-color 0s;
+    background-color: #FF0000;
+    transition: background-color 0s;
 }
 
-.new-value {
-	margin-top: 20px;
-	font-size: 20px;
-}
-
+/* Obrisano margin-left: 500px jer je to kvarilo prikaz */
 #osvjezi {
-	margin-left: 75px;
+    /* Ovdje ne treba ništa, flexbox iz .dugmad radi posao */
 }
