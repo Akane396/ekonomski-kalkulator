@@ -1,20 +1,19 @@
 {
-  "name": "Kalkulator sl Kamate",
-  "short_name": "Kalkulator sl Kamata",
+  "name": "",
+  "short_name": "Kalkulator sl kamata",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "scope": "./",
   "icons": [
     {
-      "src": "percentage.png",
+      "src": "ic_launcher.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "percentage.png",
+      "src": "ic_launcher.png",
       "sizes": "512x512",
       "type": "image/png"
     }
