@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -18,21 +19,20 @@ h1 {
 
 .background-overlay {
     background-color: black;
-    padding: 20px; /* Smanjeno sa 50px da bolje stane na mobitel */
-    width: 100%; /* Promijenjeno sa 110% na 100% da nema horizontalnog skrolanja */
+    padding: 20px;
+    width: 100%;
     height: 100vh;
 }
 
 .container {
     max-width: 800px;
-    margin: 30px auto 0 auto; /* Centriranje containera */
+    margin: 30px auto 0 auto;
     border-radius: 20px;
     background-color: white;
     padding: 25px;
     color: black;
 }
 
-/* Stilovi za inpute unutar containera */
 .container h3, .container h4 {
     margin-bottom: 20px;
 }
@@ -48,17 +48,22 @@ h1 {
     background-color: #E1E1E1;
 }
 
-/* NOVO: Poravnanje dugmadi */
+input:focus, 
+button:focus,
+.container button:focus {
+    outline: none !important;
+}
+
 .dugmad {
     display: flex;
-    justify-content: flex-start; /* Dugmad idu jedno do drugog s lijeva */
-    gap: 10px; /* Razmak između dugmadi */
+    justify-content: flex-start;
+    gap: 80px;
     margin-top: 10px;
 }
 
 .container button {
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 10px 18px; 
+    font-size: 15px;
     font-weight: bold;
     background-color: #000000;
     color: white;
@@ -66,7 +71,6 @@ h1 {
     border-radius: 10px;
     border: none;
     transition: background-color 1.5s ease, color 1.5s ease;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .container button:active {
@@ -74,7 +78,15 @@ h1 {
     transition: background-color 0s;
 }
 
-/* Obrisano margin-left: 500px jer je to kvarilo prikaz */
+.new-value {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    border-left: 4px solid black;
+}
+
 #osvjezi {
-    /* Ovdje ne treba ništa, flexbox iz .dugmad radi posao */
+
 }
