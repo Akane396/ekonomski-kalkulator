@@ -57,7 +57,7 @@ button:focus,
 .dugmad {
     display: flex;
     justify-content: flex-start;
-    gap: 80px;
+    gap: 88px;
     margin-top: 10px;
 }
 
