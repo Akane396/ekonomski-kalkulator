@@ -1,6 +1,6 @@
 {
   "name": "Kalkulator",
-  "short_name": "Kalkulator",
+  "short_name": "Kalkulator sl Kamata",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
